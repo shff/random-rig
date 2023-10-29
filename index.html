@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Random Picture</title>
+  <style>
+    body {
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      padding: 24px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: white;
+      background-color: orangered;
+    }
+
+    img {
+      max-height: 80vh;
+    }
+  </style>
+  <script>
+    function getRandomImage() {
+      // use this:
+      //   echo "var images = ["$(ls ./public/* | sed -e 's/^/"/' -e 's/$/"/' | tr '\n' ',' | sed 's/,$//')"];"
+      var images = ["./public/10000maniacs_1982_steve.gif", "./public/10000maniacs_2000_steve.gif", "./public/aberdeen_beth.gif", "./public/acdc_angus.gif", "./public/allmanbrothers_warren_1990.gif", "./public/angus_acdc_2000.gif", "./public/ash_mark_2000.gif", "./public/berry_chuck_1999.gif", "./public/blacktamb_mike.gif", "./public/blink182_mark_1999.gif", "./public/blink182_thomas.gif", "./public/blink182_thomas_1999.gif", "./public/bluesbreakers_clapton.gif", "./public/bluesbreakers_eric_1966.gif", "./public/boyracer_nicola.gif", "./public/boyracer_nicola_hodgkinson_2000.jpg", "./public/braid_chris.gif", "./public/britnyfox_tommy_2001.gif", "./public/catherinewheel_dave.gif", "./public/chavez_matt_2000.gif", "./public/cinerama_terry.gif", "./public/clientele_alasdair_2008.jpg", "./public/clientele_alastair_2008.gif", "./public/coed_mac.gif", "./public/coed_waleed.gif", "./public/collins_albert_1970.gif", "./public/come_chris.gif", "./public/dale_dick_2000.gif", "./public/daltonians_julie_2014_guitar_rig.jpg", "./public/deadlights_duke.gif", "./public/death_chuck_schuldiner_guitar_rig_1993.jpg", "./public/diffuser_anthony.gif", "./public/diffuser_tomas.gif", "./public/downbylaw_dave.gif", "./public/elfpower_andrew.gif", "./public/elfpower_brian.gif", "./public/elfpower_laura.gif", "./public/eric_clapton_bluesbreakers_guitar_rig_1966.jpg", "./public/eric_clapton_the_yardbirds_guitar_rig_1964.jpg", "./public/fall_out_boy_joe_trohman_2005.jpg", "./public/fastbacks_lulu.gif", "./public/frankblack_2001.gif", "./public/fugazi_guy_1999.gif", "./public/fugazi_guy_picciotto_guitar_rig_1999.jpg", "./public/fugazi_ian.gif", "./public/fugazi_ian_1999.gif", "./public/fugazi_ian_mackaye_guitar_rig_19991.jpg", "./public/ginblossoms_bill.gif", "./public/gogos_jane_2000.gif", "./public/hooverphonic_alex.gif", "./public/innocence_karen.gif", "./public/jesus_lizard_duane_denison_guitar_rig_1989.jpg", "./public/joydivision_ian.gif", "./public/jucifer_amber.gif", "./public/juniorvarsity_rebecca.gif", "./public/kiddynamite_dan.gif", "./public/killingheidi_jesse_2001.gif", "./public/killswitch_joel_stroetzel_2005.jpg", "./public/king_jackie_1988.gif", "./public/kinks_dave_1964.gif", "./public/kissoffs_phillip.gif", "./public/lamb_of_god_willie_adler_2005.jpg", "./public/lessthanjake_chris.gif", "./public/lilactime_stephen.gif", "./public/low_zak.gif", "./public/madisonelectric_jj.gif", "./public/mudvayne_ryknow.gif", "./public/mudvayne_ryknow_2001.gif", "./public/murphyslaw_todd.gif", "./public/mxpx_tom_1999.gif", "./public/nadasurf_daniel_2001.gif", "./public/nickelback_mike_2001.gif", "./public/outrageouscherry_larry.gif", "./public/paparoach_tobin_2000.gif", "./public/pearljam_eddie_1997.gif", "./public/peterandgordon_gordon.gif", "./public/pixies_black_1993.gif", "./public/pixies_joey.gif", "./public/pixies_kim_1991.gif", "./public/promisering_davey.gif", "./public/promisering_davey_2000.gif", "./public/quasi_sam.gif", "./public/ramones_johnny_1990.gif", "./public/ramones_johnny_ramone_1996.jpg", "./public/rocketship_dustin.gif", "./public/rollinsband_marcus.gif", "./public/ryecoalition_justin.gif", "./public/sarahdougher.gif", "./public/savage_republic_1988_bruce.gif", "./public/savagerepublic_bruce.gif", "./public/shellac_bob.gif", "./public/silverscooter_scott.gif", "./public/silverscooter_shawn.gif", "./public/sisterhazel_jeff_2001.gif", "./public/sleaterkinney_carrie.gif", "./public/sleaterkinney_carrie_2000.gif", "./public/squatweiler_trip.gif", "./public/staticx_tony_2002.gif", "./public/staticx_wayne_2002.gif", "./public/sublime_eric_1992.gif", "./public/superjointritual_jimmy_bower_guitar_rig_2004.jpg", "./public/telegraphmelts_bob.gif", "./public/television_richard_1974.gif", "./public/the_jesus_lizard_duane_denison_guitar_rig_1990-1994.jpg", "./public/the_kinks_dave_davies_1964_rig.jpg", "./public/toadies_lisa_2001.gif", "./public/twistedsister_jj_1980.gif", "./public/ultimatefake_nick.gif", "./public/who_pete_1969.gif", "./public/willienelson_jackie_2001.gif", "./public/wontons_dean.gif"];
+      var randomIndex = Math.floor(Math.random() * images.length);
+      var randomImage = images[randomIndex];
+      var imageUrl = randomImage;
+
+      document.querySelector('#picture').src = imageUrl;
+    }
+    document.addEventListener('DOMContentLoaded', getRandomImage);
+    document.addEventListener('keydown', (e) => e.key === 'r' && getRandomImage());
+  </script>
+</head>
+
+<body>
+  <h1>Rig Diagram</h1>
+  <button onclick="getRandomImage()">Refersh</button>
+  <br><br>
+  <img id="picture" src="" alt="Random Picture">
+</body>
+
+</html>
